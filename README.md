@@ -5,10 +5,10 @@ This repository contains the projects completed during my Cyber Security Interns
 
 ## Intern Details
 
-**Name:** Maitri Soni
-**Internship Domain:** Cyber Security
-**Organization:** Oasis Infobyte
-**Duration:** 1 Month
+* Name: Maitri Soni
+* Internship Domain: Cyber Security
+* Organization: Oasis Infobyte
+* Duration: 1 Month
 
 ---
 

@@ -1,177 +1,156 @@
-# OIBSIP
-# Task 1 - Basic Network Scanning with Nmap
+#OIBSIP
+# Oasis Infobyte Cyber Security Internship (OIBSIP)
 
-## Objective
+This repository contains the projects completed during my Cyber Security Internship at Oasis Infobyte (OIBSIP). The projects focus on network security, vulnerability assessment, penetration testing fundamentals, traffic analysis, and cybersecurity research using industry-standard security tools.
 
-The objective of this task was to perform network scanning using Nmap to identify open ports, detect running services, and gather operating system information from a target machine. The scan results were analyzed to understand potential security risks associated with exposed services.
+## Intern Details
+
+**Name:** Maitri Soni
+**Internship Domain:** Cyber Security
+**Organization:** Oasis Infobyte
+**Duration:** 1 Month
 
 ---
 
-## Tools Used
+## Technologies & Tools Used
 
 * Kali Linux
 * Nmap
+* Wireshark
+* Nikto
+* DVWA (Damn Vulnerable Web Application)
+* UFW Firewall
+* Burp Suite
+* SQLMap
 * VirtualBox
-* Linux Terminal
+* GitHub
+* Markdown
 
 ---
 
-## What is Nmap?
+# Projects
 
-Nmap (Network Mapper) is a free and open-source network scanning tool used by cybersecurity professionals and network administrators to discover hosts, identify open ports, detect running services, and perform security assessments.
+## 1. Basic Network Scanning with Nmap
+
+**Objective:** Identify open ports, running services, and operating system details of a local machine or virtual machine using Nmap.
+
+### Techniques Used
+
+* Basic Network Scanning
+* Service Version Detection
+* OS Detection
+* Open Port Analysis
+* Security Risk Assessment
+* Network Enumeration
 
 ---
 
-## Why Network Scanning Matters
+## 2. Basic Firewall Configuration with UFW
 
-Network scanning is important because it helps to:
+**Objective:** Configure and manage firewall rules using UFW to secure a Linux system.
 
-* Identify active devices on a network
-* Discover open ports and running services
-* Detect unnecessary or vulnerable services
-* Understand the attack surface of a system
-* Improve overall network security
+### Techniques Used
+
+* Firewall Installation & Setup
+* Allow/Deny Rules Configuration
+* Traffic Filtering
+* Rule Verification
+* Security Policy Implementation
+* Shell Script Automation
 
 ---
 
-## Nmap Installation
+## 3. SQL Injection on DVWA
 
-Nmap comes pre-installed with Kali Linux.
+**Objective:** Demonstrate and analyze SQL Injection vulnerabilities in a controlled environment using DVWA.
 
-To verify installation:
+### Techniques Used
 
-```bash
-nmap --version
+* SQL Injection Testing
+* Authentication Bypass
+* Payload Analysis
+* Vulnerability Documentation
+* Security Impact Assessment
+* Mitigation Recommendations
+
+---
+
+## 4. Research Report: Common Network Security Threats
+
+**Objective:** Research and analyze common network attacks and their impact on organizations.
+
+### Topics Covered
+
+* DoS/DDoS Attacks
+* Man-in-the-Middle (MITM) Attacks
+* IP Spoofing
+* DNS Spoofing & Poisoning
+* Threat Comparison
+* Security Mitigation Strategies
+
+---
+
+## 5. Vulnerability Scanning with Nikto
+
+**Objective:** Perform automated web server vulnerability assessments and document security findings.
+
+### Techniques Used
+
+* Web Vulnerability Scanning
+* Server Misconfiguration Detection
+* Security Analysis
+* Risk Categorization
+* Remediation Planning
+* Security Reporting
+
+---
+
+## 6. Network Traffic Analysis with Wireshark
+
+**Objective:** Capture and analyze network traffic to understand protocols and identify potential security risks.
+
+### Techniques Used
+
+* Packet Capture
+* HTTP Analysis
+* DNS Analysis
+* TCP Handshake Inspection
+* Protocol Filtering
+* Traffic Monitoring
+
+---
+
+## Repository Structure
+
+```text
+OIBSIP/
+│
+├── CyberSecurity-Task1-NetworkScanning/
+├── CyberSecurity-Task2-UFWFirewall/
+├── CyberSecurity-Task3-SQLInjectionDVWA/
+├── CyberSecurity-Task4-NetworkThreatsReport/
+├── CyberSecurity-Task7-NiktoScanning/
+├── CyberSecurity-Task8-WiresharkAnalysis/
+└── README.md
 ```
 
-If Nmap is not installed:
+---
 
-```bash
-sudo apt update
-sudo apt install nmap
-```
+## Learning Outcomes
+
+* Network Scanning & Enumeration
+* Firewall Configuration & Management
+* Vulnerability Assessment
+* SQL Injection Testing
+* Traffic Analysis
+* Web Security Fundamentals
+* Risk Assessment & Reporting
+* Cyber Security Documentation
+* Security Best Practices
+* GitHub Project Management
 
 ---
 
-## Target Information
+## Acknowledgement
 
-The target scanned during this task was:
-
-* IP Address: 10.149.212.234
-* Environment: Kali Linux Virtual Machine
-* Scan Type: Local Network Scan
-
-**Ethical Notice:** All scans were performed on systems owned and controlled by the tester. No external, public, or production systems were scanned.
-
----
-
-## Commands Used
-
-### Basic Scan
-
-```bash
-nmap 10.149.212.234
-```
-
-Purpose:
-
-* Identifies open ports on the target system.
-
-### Service Version Detection
-
-```bash
-nmap -sV 10.149.212.234
-```
-
-Purpose:
-
-* Detects the version of services running on open ports.
-
-### Operating System Detection
-
-```bash
-sudo nmap -O 10.149.212.234
-```
-
-Purpose:
-
-* Attempts to identify the operating system of the target machine.
-
----
-
-## Scan Results Summary
-
-| Port     | State | Service | Version                              |
-| -------- | ----- | ------- | ------------------------------------ |
-| 8080/tcp | Open  | HTTP    | SimpleHTTPServer 0.6 (Python 3.13.3) |
-
-### Operating System Detection
-
-* Device Type: General Purpose
-* Operating System: Linux
-* OS Details: Linux 2.6.32, Linux 5.0 – 6.2
-
----
-
-## Security Analysis
-
-### Port 8080 - HTTP Service
-
-**Purpose:**
-
-* Port 8080 is commonly used for web servers, development servers, and web applications.
-* In this scan, the service running was Python SimpleHTTPServer.
-
-**Potential Security Risks:**
-
-* Data transmitted over HTTP is not encrypted.
-* Sensitive information may be exposed if directory listing is enabled.
-* Misconfigured web servers can expose files unintentionally.
-* Attackers may target outdated web applications running on the server.
-
-**Recommended Mitigations:**
-
-* Use HTTPS instead of HTTP whenever possible.
-* Restrict access to authorized users only.
-* Keep web applications and services updated.
-* Disable unnecessary services when not required.
-
----
-
-## Findings
-
-* The target host was reachable and active.
-* One open port (8080/tcp) was identified.
-* Service version detection revealed Python SimpleHTTPServer 0.6.
-* Operating system detection indicated a Linux-based system.
-* The open HTTP service could present security risks if improperly configured.
-
----
-
-## Files Included
-
-* README.md
-* nmap_scan_results.txt
-* Screenshots of Nmap scans
-* Supporting documentation
-
----
-
-## Ethical Use Guidelines
-
-Nmap is a powerful network security assessment tool and must be used responsibly.
-
-### Rules Followed
-
-* Scanned only systems owned by the tester.
-* Used a controlled lab environment.
-* Did not scan public websites or external networks.
-* Followed ethical cybersecurity practices.
-
-Unauthorized scanning of systems without permission may violate organizational policies and applicable laws.
-
----
-
-## Conclusion
-
-This task demonstrated how Nmap can be used to identify open ports, detect running services, and perform operating system detection. The scan successfully identified an active HTTP service running on port 8080 and determined that the target system was Linux-based. Network scanning is a fundamental cybersecurity practice that helps organizations understand their exposure and improve security by identifying and securing unnecessary services.
+I sincerely thank Oasis Infobyte for providing this opportunity to enhance my practical Cyber Security skills through hands-on projects, security assessments, research activities, and real-world security tool usage. This internship helped strengthen my understanding of network security, vulnerability management, and ethical hacking fundamentals.
